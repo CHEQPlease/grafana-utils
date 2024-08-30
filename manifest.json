@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "CHEQ Grafana Utilities",
+  "description": "Grafana utilities for CHEQ",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "matches": ["*://monitoring.cheq.io/*"],
+      "js": ["script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "grafanautils@cheq.io",
+      "update_url": "https://example.com/updates.json"
+    }
+  }
+}

@@ -66,7 +66,7 @@ function addReqTabButton() {
   for (const messageCell of messageCells) {
     messageCell.classList.add('added');
 
-    const [, requestId] = messageCell.innerText.match(/(requestId|reqId)":"(.*?)"/) ?? [];
+    const [,, requestId] = messageCell.innerText.match(/(requestId|reqId)":"(.*?)"/) ?? [];
 
     if (!requestId) continue;
 

@@ -61,10 +61,12 @@ function addReqTabButton() {
   const left = JSON.parse(url.searchParams.get('left'));
   const [expr] = left?.queries[0]?.expr?.match(/{.*}/) ?? [];
 
+  console.log(`number of new messages: ${messageCells.length}`);
+
   for (const messageCell of messageCells) {
     messageCell.classList.add('added');
 
-    const [, requestId] = messageCell.innerText.match(/requestId":"(.*?)"/) ?? [];
+    const [, requestId] = messageCell.innerText.match(/(requestId|reqId)":"(.*?)"/) ?? [];
 
     if (!requestId) continue;
 
